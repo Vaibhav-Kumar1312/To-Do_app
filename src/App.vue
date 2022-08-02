@@ -1,9 +1,12 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Sign Up</router-link> |
+    <router-link :to="{ name: 'sgnin' }">Sign In</router-link>
+    <!--this is how we use named routes--:to='{name:"name of the route"}' -->
+    <input type="text" label="Add task" placeholder="Add a To-do" />
+    <button>ADD</button>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
