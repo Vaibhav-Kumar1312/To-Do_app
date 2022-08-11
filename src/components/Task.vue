@@ -1,36 +1,21 @@
 <template>
   <div>
-    <div v-for="td in dat" :key="td.id">
-      {{ td.id }} {{ td.todo }}
-      <button>EDIT</button>
-      <button @click="dat.pop()">DLT</button>
+    <div v-for="td in props.todoTask" :key="td.id">
+      {{ td.id + 1 }} {{ td.todo }}
+      <button>EDT</button>
+      <button @click="dltTodo">DLT</button>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-// import todoTs from "./types/todoTs.ts";
+<script setup lang="ts">
+const props = defineProps(["todoTask"]);
 
-export default defineComponent({
-  name: "Task",
-  props: ["dat"],
-  data() {
-    return {};
-  },
-  methods: {
-    // dltTodo(id: number): void {
-    //   this.newData = this.data.slice();
-    //   console.log(this.newData);
-    //   this.newData.splice(id, 1);
-    // },
-  },
-  watch: {
-    dat(nw, pv) {
-      console.log(this.dat);
-    },
-  },
-});
+const dltTodo = function (): null {
+  props.todoTask.pop();
+  console.log(props.todoTask);
+  return null;
+};
 </script>
 
 <style></style>

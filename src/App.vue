@@ -1,38 +1,32 @@
 <template>
   <nav>
-    <router-link to="/">Sign Up</router-link> |
-    <router-link :to="{ name: 'sgnin' }">Sign In</router-link>
+    <router-link to="/">HOME</router-link> |
+    <router-link :to="{ name: 'logIn' }">LOG-IN</router-link><br />
     <!--this is how we use named routes--:to='{name:"name of the route"}' -->
-    <input
-      type="text"
-      label="Add task"
-      placeholder="Add To-Do"
-      v-model="todo"
-    />
-    <button @click="pushTodo">ADD</button>
   </nav>
-  {{ todo }}
   <router-view />
 </template>
 
 <script lang="ts" setup>
-// import { defineComponent } from "@vue/composition-api";
-import { ref, reactive } from "vue";
+// // import { defineComponent } from "@vue/composition-api";
+// import { ref, reactive } from "vue";
+// import Task from "@/components/Task.vue";
 
-interface todo {
-  id: number;
-  todo: string;
-}
-let id = ref(0);
-let naam = ref<string>("vaibhav");
-let todo = ref("");
-let todoArr = reactive<todo[]>([]);
-const pushTodo = function () {
-  // console.log(id.value++, todo.value);
-  todoArr.push({ id: id.value++, todo: todo.value });
-  console.log(todoArr);
-};
-// export default defineComponent({});
+// interface todoType {
+//   id: number;
+//   todo: string;
+// }
+// let id = ref(0);
+// let todo = ref("");
+// let todoArr = reactive<todoType[]>([]);
+
+// const pushTodo = function (): void {
+//   // console.log(id.value++, todo.value);
+//   todoArr.push({ id: id.value++, todo: todo.value });
+//   console.log(todoArr);
+// };
+// // export default defineComponent({});
+//
 </script>
 
 <style>
