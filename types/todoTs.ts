@@ -1,6 +1,6 @@
-interface todo {
+interface todoTs {
   id: number;
   todo: string;
 }
 
-export default todo;
+export default todoTs;
